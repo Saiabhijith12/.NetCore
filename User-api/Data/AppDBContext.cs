@@ -14,7 +14,7 @@ namespace User_api.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .HasKey(u => new { u.user_name }); // Composite key configuration
+                .HasKey(u => new { u.user_name }); 
         }
     }
 }
