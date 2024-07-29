@@ -14,7 +14,11 @@ namespace User_api.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-                .HasKey(u => new { u.user_name }); 
+                .HasKey(u => new { u.user_name });
+            modelBuilder.Entity<User>()
+               .Property(u => u.user_status)
+               .HasMaxLength(1)
+               .HasColumnType("varchar(1)");
         }
     }
 }
